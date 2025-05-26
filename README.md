@@ -1,102 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Tiriveedhi Sai Venkatesh | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Your styles remain unchanged -->
+  <meta charset="UTF-8">
+  <title>Portfolio Profile</title>
   <style>
-    /* (All your CSS here, unchanged for brevity) */
+    /* Reset some default styles */
+    body, h1, h2, h3, p, ul, li, table {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    /* Top Ribbon */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #222;
+      color: #fff;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-list li {
+      display: inline;
+    }
+    .nav-list a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 8px 16px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-list a:hover {
+      background: #444;
+      color: #ffd700;
+      border-radius: 4px;
+    }
+
+    /* Main content below navbar */
+    .container {
+      margin-top: 80px;
+      padding: 2rem;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Table Section */
+    .table-section {
+      background: #eaeaea; /* Non-white background */
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: none;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background: #d1d1d1;
+    }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="nav-container">
-      <span class="logo"></span>
-      <ul>
-        <li><a href="#" class="active" data-section="profile">Home</a></li>
-        <li><a href="#" data-section="experience">Experience</a></li>
-        <li><a href="#" data-section="education">Education</a></li>
-        <li><a href="#" data-section="certifications">Certifications</a></li>
-        <li><a href="#" data-section="skills">Skills</a></li>
-        <li><a href="#" data-section="achievements">Achievements</a></li>
-        <li><a href="#" data-section="projects">Projects</a></li>
-        <li><a href="#" data-section="contact">Contact</a></li>
-      </ul>
-    </div>
+  <!-- Top Ribbon / Navigation Bar -->
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <!-- Add more tabs as needed -->
+    </ul>
   </nav>
+
   <div class="container">
-    <!-- ... All your sections remain unchanged ... -->
+    <h1 id="home">Welcome to My Portfolio</h1>
+    <p>This is the home section. Scroll down to see the table data section.</p>
+
+    <section class="table-section" id="projects">
+      <h2>Project Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Project Name</th>
+            <th>Description</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Portfolio Website</td>
+            <td>Personal portfolio to showcase my projects and skills.</td>
+            <td>2025</td>
+          </tr>
+          <tr>
+            <td>Data Visualizer</td>
+            <td>A tool for visualizing datasets interactively.</td>
+            <td>2024</td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: youremail@example.com</p>
+    </section>
   </div>
-  <div class="footer">
-    <span>
-      <b>Contact:</b>
-      <a href="mailto:saivenkateshtiriveedhi@gmail.com">saivenkateshtiriveedhi@gmail.com</a> |
-      <a href="https://www.linkedin.com/in/tiriveedhi-sai-venkatesh-31b5a71ab" target="_blank">LinkedIn</a> |
-      <span>+91-XXXXXXXXXX</span>
-    </span>
-  </div>
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Tab navigation logic for top nav
-    const navLinks = document.querySelectorAll('nav ul li a');
-    const sections = document.querySelectorAll('.section');
-
-    function showHideExperienceCounter(sectionId) {
-      const expCounter = document.getElementById('exp-counter-inline');
-      if (!expCounter) return;
-      if (sectionId === 'profile' || sectionId === 'experience') {
-        expCounter.style.display = 'flex';
-      } else {
-        expCounter.style.display = 'none';
-      }
-    }
-
-    // Initial check (on page load)
-    showHideExperienceCounter('profile');
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        navLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-        sections.forEach(s => s.classList.remove('active-section'));
-        const target = link.getAttribute('data-section');
-        const targetSection = document.getElementById(target);
-        if (targetSection) {
-          targetSection.classList.add('active-section');
-          showHideExperienceCounter(target);
-        }
-      });
-    });
-
-    // Professional Experience Counter (inline, green dot toggles every 2 seconds)
-    function updateExperienceCounterInline() {
-      const joinDate = new Date(2022, 11, 1); // Dec 1, 2022
-      const now = new Date();
-      let months = (now.getFullYear() - joinDate.getFullYear()) * 12 + (now.getMonth() - joinDate.getMonth());
-      if (now.getDate() < joinDate.getDate()) months--;
-      months = Math.max(0, months);
-      const years = Math.floor(months / 12);
-      const remMonths = months % 12;
-      let text = '';
-      if (years > 0) text += years + (years === 1 ? ' year' : ' years');
-      if (remMonths > 0 || years === 0) {
-        if (years > 0) text += ' ';
-        text += remMonths + (remMonths === 1 ? ' month' : ' months');
-      }
-      const expValue = document.getElementById('exp-value-inline');
-      if (expValue) expValue.textContent = text;
-    }
-    updateExperienceCounterInline();
-    setInterval(updateExperienceCounterInline, 1000 * 60 * 60);
-
-    // Toggle the green dot every 2 seconds
-    setInterval(function() {
-      const expDot = document.getElementById('exp-dot');
-      if (expDot) expDot.classList.toggle('off');
-    }, 2000);
-  });
-  </script>
 </body>
 </html>
