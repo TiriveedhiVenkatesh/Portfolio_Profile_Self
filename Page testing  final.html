@@ -96,20 +96,27 @@
       color: #fff;
       transition: background 0.3s, color 0.3s;
     }
-    /* Remove all table backgrounds and cell backgrounds */
+    /* Remove all table backgrounds and cell backgrounds, keep white text */
     table, thead, tbody, tr, th, td {
       background: none !important;
       background-color: transparent !important;
       box-shadow: none !important;
+      color: #fff !important;
     }
-    /* For Experience and Education: white background, black text */
-    #experience, #education {
-      background: #fff !important;
-      color: #111 !important;
+    th {
+      border-bottom: 2px solid #1561ad;
     }
-    #experience *, #education * {
-      color: #111 !important;
-      background: transparent !important;
+    td, th {
+      padding: 10px 12px;
+      text-align: left;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    tr:not(:last-child) td {
+      border-bottom: 1px solid #444;
     }
     /* Responsive tweaks */
     @media (max-width: 900px) {
@@ -159,17 +166,12 @@
     </div>
   </nav>
   <div class="container">
-    <div class="exp-counter-inline" id="exp-counter-inline" style="display:none;">
-      <span>Professional Experience:</span>
-      <span id="exp-value-inline">Calculating...</span>
-      <span class="exp-dot" id="exp-dot"></span>
-    </div>
-    <!-- Example Home Section -->
+    <!-- Home Section -->
     <div class="section active-section" id="profile">
       <h2>Welcome to My Portfolio</h2>
       <p>This is a demo. Replace with your real content.</p>
     </div>
-    <!-- Example Experience Section -->
+    <!-- Experience Section -->
     <div class="section" id="experience">
       <h2>Experience</h2>
       <table>
@@ -188,10 +190,16 @@
             <td>Jun 2024 – Present</td>
             <td>Leading Boomi integration projects.</td>
           </tr>
+          <tr>
+            <td>Analyst</td>
+            <td>Capgemini</td>
+            <td>Jun 2023 – May 2024</td>
+            <td>Integrated Salesforce, NetSuite, and scanning devices.</td>
+          </tr>
         </tbody>
       </table>
     </div>
-    <!-- Example Education Section -->
+    <!-- Education Section -->
     <div class="section" id="education">
       <h2>Education</h2>
       <table>
@@ -205,18 +213,78 @@
         </thead>
         <tbody>
           <tr>
-            <td>B.Tech</td>
+            <td>B.Tech in ECE</td>
             <td>Ramachandra College</td>
             <td>2018 – 2022</td>
-            <td>First Class</td>
+            <td>First Class, 76%</td>
+          </tr>
+          <tr>
+            <td>Intermediate (MPC)</td>
+            <td>Vidya Vikas Junior College</td>
+            <td>2016 – 2018</td>
+            <td>Distinction, 90%</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <!-- ...Add your other sections... -->
+    <!-- Certifications Section -->
+    <div class="section" id="certifications">
+      <h2>Certifications</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Certification Name</th>
+            <th>Issuer</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Boomi Associate Master Data Hub</td>
+            <td>Boomi</td>
+            <td>Completed</td>
+          </tr>
+          <tr>
+            <td>Boomi Professional API Design</td>
+            <td>Boomi</td>
+            <td>Completed</td>
+          </tr>
+          <tr>
+            <td>Celigo Fundamentals Level 1</td>
+            <td>Celigo</td>
+            <td>Completed</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Skills Section -->
+    <div class="section" id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>Boomi Integration</li>
+        <li>API Management</li>
+        <li>SQL, HTML, CSS</li>
+      </ul>
+    </div>
+    <!-- Achievements Section -->
+    <div class="section" id="achievements">
+      <h2>Achievements</h2>
+      <ul>
+        <li>Got good rating in Capgemini (2024)</li>
+      </ul>
+    </div>
+    <!-- Projects Section -->
+    <div class="section" id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li>Enterprise Integration Platform (Boomi)</li>
+      </ul>
+    </div>
+    <!-- Contact Section -->
     <div class="section" id="contact">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:saivenkateshtiriveedhi@gmail.com">saivenkateshtiriveedhi@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/tiriveedhi-sai-venkatesh-31b5a71ab" target="_blank">linkedin.com/in/tiriveedhi-sai-venkatesh-31b5a71ab</a></p>
     </div>
   </div>
   <div class="footer">
@@ -230,16 +298,6 @@
     // Tab navigation logic for top nav
     const navLinks = document.querySelectorAll('nav ul li a');
     const sections = document.querySelectorAll('.section');
-    function showHideExperienceCounter(sectionId) {
-      const expCounter = document.getElementById('exp-counter-inline');
-      if (sectionId === 'profile' || sectionId === 'experience') {
-        expCounter.style.display = 'flex';
-      } else {
-        expCounter.style.display = 'none';
-      }
-    }
-    // Initial check (on page load)
-    showHideExperienceCounter('profile');
     navLinks.forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
@@ -248,7 +306,6 @@
         sections.forEach(s => s.classList.remove('active-section'));
         const target = link.getAttribute('data-section');
         document.getElementById(target).classList.add('active-section');
-        showHideExperienceCounter(target);
       });
     });
   </script>
