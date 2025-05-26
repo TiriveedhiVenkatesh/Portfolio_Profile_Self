@@ -101,16 +101,16 @@
       color: #fff;
       transition: background 0.3s, color 0.3s;
     }
-    /* Remove all table backgrounds and cell backgrounds, keep white text */
+    /* BULLETPROOF: Remove all table backgrounds and make text white */
     table, thead, tbody, tr, th, td {
-      background: none !important;
+      background: transparent !important;
       background-color: transparent !important;
-      box-shadow: none !important;
       color: #fff !important;
       border: none;
+      box-shadow: none !important;
     }
     th {
-      border-bottom: 2px solid #1561ad;
+      border-bottom: 2px solid #1561ad !important;
     }
     td, th {
       padding: 10px 12px;
@@ -122,7 +122,7 @@
       margin-bottom: 20px;
     }
     tr:not(:last-child) td {
-      border-bottom: 1px solid #444;
+      border-bottom: 1px solid #444 !important;
     }
     /* Responsive tweaks */
     @media (max-width: 900px) {
