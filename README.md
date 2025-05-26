@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Tiriveedhi Sai Venkatesh| Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tiriveedhi Sai Venkatesh | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=5" />
   <style>
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
