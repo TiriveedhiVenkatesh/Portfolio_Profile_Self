@@ -49,15 +49,6 @@
       flex-wrap: nowrap;
       height: 40px;
     }
-    .logo {
-      color: #fff;
-      font-size: 1.2em;
-      font-weight: bold;
-      padding: 10px 0;
-      flex: 0 0 auto;
-      letter-spacing: 1px;
-      margin-right: 18px;
-    }
     nav ul {
       list-style: none;
       margin: 0;
@@ -104,6 +95,7 @@
       padding: 32px;
       min-height: 400px;
       color: #fff;
+      transition: background 0.3s, color 0.3s;
     }
     /* Remove all table backgrounds and cell backgrounds */
     table, thead, tbody, tr, th, td {
@@ -111,14 +103,15 @@
       background-color: transparent !important;
       box-shadow: none !important;
     }
-    /* Bright black text for tables in Experience and Education */
-    #experience table, #experience thead, #experience tbody, #experience tr, #experience th, #experience td,
-    #education table, #education thead, #education tbody, #education tr, #education th, #education td {
+    /* For Experience and Education: white background, black text */
+    #experience, #education {
+      background: #fff !important;
       color: #111 !important;
     }
-    /* Black text for all Experience and Education content */
-    #experience, #education,
-    #experience *, #education * { color: #111 !important; background: transparent !important; }
+    #experience *, #education * {
+      color: #111 !important;
+      background: transparent !important;
+    }
     /* Responsive tweaks */
     @media (max-width: 900px) {
       .container { padding: 12px; }
