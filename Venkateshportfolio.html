@@ -382,13 +382,14 @@
       <span id="exp-value-inline">Calculating...</span>
       <span class="exp-dot" id="exp-dot"></span>
     </div>
-    <!-- Home Section -->
+
+    <!-- Home Landing Section -->
     <div class="section active-section" id="profile">
       <div class="home-header">
         <h1>Tiriveedhi Sai Venkatesh</h1>
         <h2>Sr. Analyst in Capgemini | Boomi Integration Developer</h2>
         <p>
-          As a skilled Boomi integration specialist, I connect business applications and technologies to ensure secure, scalable, and efficient data flow across all environments. By leveraging the Boo[...]
+          As a skilled Boomi integration specialist, I connect business applications and technologies to ensure secure, scalable, and efficient data flow across all environments. By leveraging the Boomi platform for end-to-end integration, I help organizations streamline processes, automate workflows, and maintain smooth information exchange throughout their digital landscape.
         </p>
       </div>
       <div class="skills-photo-grid">
@@ -408,7 +409,8 @@
         </div>
       </div>
     </div>
-    <!-- Experience Section -->
+
+    <!-- Experience Section (REVERSE CHRONOLOGICAL ORDER) -->
     <div class="section" id="experience">
       <div class="section-title">Experience</div>
       <table>
@@ -429,7 +431,7 @@
               <ul>
                 <li>Leading Boomi integration projects for enterprise clients.</li>
                 <li>Developing and maintaining scalable integration solutions.</li>
-                <li>Giving innovative ideas with solutions and overseeing project delivery.</li>
+                <li>Providing innovative ideas, solutions, and overseeing project delivery.</li>
               </ul>
             </td>
           </tr>
@@ -439,9 +441,9 @@
             <td>Jun 2023 – May 2024</td>
             <td>
               <ul>
-                <li>Sync the Accounts & products details between Salesforce and Database.</li>
-                <li>Integration of a PLM system with NetSuite.</li>
-                <li>Sync of Transactions Details between NetSuite and Client’s shipment scanning device.</li>
+                <li>Synced Accounts & product details between Salesforce and the database.</li>
+                <li>Integrated PLM system with NetSuite.</li>
+                <li>Synchronized transaction details between NetSuite and client’s shipment scanning device.</li>
               </ul>
             </td>
           </tr>
@@ -451,14 +453,15 @@
             <td>Dec 2022 – May 2023</td>
             <td>
               <ul>
-                <li>Worked on NetSuite techno functional roles and Boomi.</li>
-                <li>Learning Boomi & NetSuite.</li>
+                <li>Worked on NetSuite techno-functional roles and Boomi.</li>
+                <li>Learned Boomi & NetSuite integration.</li>
               </ul>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
+
     <!-- Education Section -->
     <div class="section" id="education">
       <div class="section-title">Education</div>
@@ -493,6 +496,7 @@
         </tbody>
       </table>
     </div>
+
     <!-- Certifications Section -->
     <div class="section" id="certifications">
       <div class="section-title">Certifications</div>
@@ -523,6 +527,7 @@
         </tbody>
       </table>
     </div>
+
     <!-- Skills Section -->
     <div class="section" id="skills">
       <div class="section-title">Professional Skills</div>
@@ -535,17 +540,27 @@
         <li>Proficient in front-end technologies: HTML and CSS.</li>
         <li>Adept at working with data formats such as JSON and XML.</li>
         <li>Solid understanding of relational databases and data modeling.</li>
-        <li>Practical experience integrating with enterprise applications including: NetSuite, Snowflake, Salesforce, Anaplan, OneTrust.</li>
+        <li>Practical experience integrating with enterprise applications including:
+          <ul>
+            <li>NetSuite</li>
+            <li>Snowflake</li>
+            <li>Salesforce</li>
+            <li>Anaplan</li>
+            <li>OneTrust</li>
+          </ul>
+        </li>
         <li>Experience connecting to client applications via HTTP endpoints and APIs.</li>
       </ul>
     </div>
+
     <!-- Achievements Section -->
     <div class="section" id="achievements">
       <div class="section-title">Achievements</div>
       <ul class="achieve-list">
-        <li>Got good rating in Capgemini (2024)</li>
+        <li>Received excellent performance ratings at Capgemini (2024)</li>
       </ul>
     </div>
+
     <!-- Projects Section -->
     <div class="section" id="projects">
       <div class="section-title">Projects</div>
@@ -556,6 +571,7 @@
         </div>
       </div>
     </div>
+
     <!-- Contact Section -->
     <div class="section" id="contact">
       <div class="section-title">Contact</div>
@@ -579,6 +595,7 @@
       </form>
     </div>
   </div>
+
   <div class="footer">
     <span>
       <b>Contact:</b>
@@ -587,10 +604,24 @@
       <span>+91-XXXXXXXXXX</span>
     </span>
   </div>
+
   <script>
     // Tab navigation logic for top nav
     const navLinks = document.querySelectorAll('nav ul li a');
     const sections = document.querySelectorAll('.section');
+
+    function showHideExperienceCounter(sectionId) {
+      const expCounter = document.getElementById('exp-counter-inline');
+      if (sectionId === 'profile' || sectionId === 'experience') {
+        expCounter.style.display = 'flex';
+      } else {
+        expCounter.style.display = 'none';
+      }
+    }
+
+    // Initial check (on page load)
+    showHideExperienceCounter('profile');
+
     navLinks.forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
@@ -599,11 +630,13 @@
         sections.forEach(s => s.classList.remove('active-section'));
         const target = link.getAttribute('data-section');
         document.getElementById(target).classList.add('active-section');
+        showHideExperienceCounter(target);
       });
     });
-    // Experience counter logic (if needed)
+
+    // Professional Experience Counter (inline, green dot toggles every 2 seconds)
     function updateExperienceCounterInline() {
-      const joinDate = new Date(2022, 11, 1); // Dec 1, 2022
+      const joinDate = new Date(2022, 11, 1); // Dec 1, 2022 (month is 0-based)
       const now = new Date();
       let months = (now.getFullYear() - joinDate.getFullYear()) * 12 + (now.getMonth() - joinDate.getMonth());
       if (now.getDate() < joinDate.getDate()) months--;
@@ -616,14 +649,14 @@
         if (years > 0) text += ' ';
         text += remMonths + (remMonths === 1 ? ' month' : ' months');
       }
-      const expValue = document.getElementById('exp-value-inline');
-      if (expValue) expValue.textContent = text;
+      document.getElementById('exp-value-inline').textContent = text;
     }
     updateExperienceCounterInline();
     setInterval(updateExperienceCounterInline, 1000 * 60 * 60);
+
+    // Toggle the green dot every 2 seconds
     setInterval(function() {
-      const dot = document.getElementById('exp-dot');
-      if (dot) dot.classList.toggle('off');
+      document.getElementById('exp-dot').classList.toggle('off');
     }, 2000);
   </script>
 </body>
