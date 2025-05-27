@@ -9,7 +9,7 @@
       font-family: 'Segoe UI', Arial, sans-serif;
       color: #fff;
       min-height: 100vh;
-      background: #222;
+      background: #fff;
       position: relative;
       padding-bottom: 90px;
       overflow-x: hidden;
@@ -20,7 +20,7 @@
       top: 0; left: 0; right: 0; bottom: 0;
       z-index: -1;
       background:
-        linear-gradient(rgba(34,34,34,0.4), rgba(34,34,34,0.4)),
+        linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
         url('https://www.intelligentcio.com/apac/wp-content/uploads/sites/44/2024/07/AdobeStock_592969307-1.jpg') no-repeat center center fixed;
       background-size: cover;
       filter: brightness(1.08) contrast(1.05);
@@ -42,6 +42,14 @@
       flex-wrap: wrap;
       position: relative;
     }
+    .logo {
+      color: #fff;
+      font-size: 1.4em;
+      font-weight: bold;
+      padding: 16px 0;
+      flex: 1 1 150px;
+      letter-spacing: 1px;
+    }
     nav ul {
       list-style: none;
       display: flex;
@@ -62,11 +70,11 @@
       text-decoration: none;
       padding: 16px 0;
       display: inline-block;
+      transition: border-bottom 0.2s;
       border-bottom: 2px solid transparent;
       font-size: 1em;
       cursor: pointer;
       white-space: nowrap;
-      transition: border-bottom 0.2s;
     }
     nav ul li a.active,
     nav ul li a:hover {
@@ -85,27 +93,237 @@
       text-shadow: 0 0 6px rgba(0,0,0,0.85);
       transition: background 0.3s;
     }
-    /* Table transparency override */
-    table, thead, tbody, tr, th, td {
-      background: transparent !important;
-      background-color: transparent !important;
-      color: #fff !important;
-      box-shadow: none !important;
-      border: none;
+    .exp-counter-inline {
+      font-size: 1em;
+      font-weight: 500;
+      color: #222;
+      background: rgba(234, 246, 251, 0.7);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 16px;
+      padding: 6px 16px 6px 10px;
+      border-radius: 6px;
+      width: fit-content;
+      box-shadow: 0 1px 6px rgba(21,97,173,0.08);
+      border-left: 4px solid #1561ad;
+      letter-spacing: 0.2px;
+      user-select: none;
     }
-    /* Responsive tweaks */
-    @media (max-width: 900px) {
-      .container { padding: 12px; }
-      nav ul { font-size: 0.97em; }
-      .nav-container { padding: 0 4px; }
+    .exp-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #23d160;
+      margin-left: 3px;
+      margin-right: 0;
+      box-shadow: 0 0 5px #23d16077;
+      vertical-align: middle;
+      transition: background 0.2s;
+    }
+    .exp-dot.off {
+      background: #bbb;
+      box-shadow: 0 0 4px #bbb7;
     }
     @media (max-width: 600px) {
-      .container { padding: 8px; }
-      nav ul { flex-direction: column; }
-      nav ul li { margin: 0 0 8px 0; }
-      table, th, td { font-size: 0.95em; }
-      table { display: block; overflow-x: auto; }
-      .footer { font-size: 0.95em; }
+      .exp-counter-inline {
+        font-size: 1em;
+        margin: 10px auto 12px auto;
+        width: 98%;
+        justify-content: center;
+        border-radius: 10px;
+        border-left: none;
+        border-top: 4px solid #1561ad;
+        padding-left: 0;
+        padding-top: 8px;
+      }
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    .section {
+      display: none;
+      animation: fadeIn 0.5s;
+    }
+    .section.active-section {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .home-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .home-header h1 {
+      margin: 0 0 8px 0;
+      font-size: 2.2em;
+      font-family: 'Georgia', serif;
+      letter-spacing: 0.5px;
+      color: #fff;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+    }
+    .home-header h2 {
+      margin: 0 0 10px 0;
+      font-size: 1.25em;
+      font-weight: 400;
+      color: #cce6fa;
+      letter-spacing: 0.5px;
+    }
+    .home-header p {
+      margin: 0 auto 24px auto;
+      font-size: 1.1em;
+      color: #e0e0e0;
+      max-width: 600px;
+      text-align: justify;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+    }
+    .skills-photo-grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      font-size: 1.07em;
+      font-weight: 500;
+      min-width: 160px;
+    }
+    .skills-left {
+      align-items: flex-end;
+      text-align: right;
+    }
+    .skills-right {
+      align-items: flex-start;
+      text-align: left;
+    }
+    .skills-list div {
+      background: #eaf6fb;
+      color: #1561ad;
+      border: 1px solid #1561ad;
+      padding: 7px 18px;
+      border-radius: 18px;
+      margin: 0 0 0 0;
+      box-shadow: 0 2px 8px rgba(21,97,173,0.04);
+      display: inline-block;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .skills-list div:hover {
+      background: #1561ad;
+      color: #fff;
+    }
+    .skills-list-main {
+      list-style: disc inside;
+      margin: 0 0 18px 0;
+      padding-left: 16px;
+      color: #eaf6fb;
+      font-size: 1.07em;
+    }
+    .skills-list-main li {
+      margin-bottom: 7px;
+      color: #eaf6fb;
+      letter-spacing: 0.2px;
+    }
+    .skills-list-main li b {
+      color: #1561ad;
+    }
+    .home-photo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .home-photo-square {
+      width: 260px;
+      height: 260px;
+      border-radius: 16px;
+      object-fit: cover;
+      border: 6px solid #fff;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.28);
+      background: #222;
+      display: block;
+    }
+    .section-title {
+      color: #7ec8e3;
+      font-size: 1.1em;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-shadow: 0 0 4px rgba(0,0,0,0.7);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+      color: #fff;
+      text-shadow: none;
+    }
+    th, td {
+      padding: 12px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #1561ad;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1em;
+    }
+    tr:nth-child(even) td {
+      background: rgba(21,97,173,0.09);
+    }
+    tr:hover td {
+      background: rgba(21,97,173,0.16);
+    }
+    .achieve-list {
+      color: #eee;
+      font-size: 1.07em;
+      margin-bottom: 12px;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      max-width: 400px;
+      padding: 8px;
+      margin-top: 4px;
+      border: 1px solid #555;
+      border-radius: 6px;
+      font-size: 1em;
+      background: rgba(255,255,255,0.15);
+      color: #eee;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #ccc;
+    }
+    .contact-form button {
+      background: #0073b1;
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+    }
+    .contact-form button:hover {
+      background: #005983;
     }
     .footer {
       position: fixed;
@@ -126,31 +344,26 @@
       text-decoration: underline;
       margin: 0 10px;
     }
-    .section { display: none; animation: fadeIn 0.5s; }
-    .section.active-section { display: block; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    /* Profile photo style */
-    .home-photo-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    @media (max-width: 900px) {
+      .skills-photo-grid { flex-direction: column; gap: 18px; }
+      .skills-list { min-width: 0; align-items: center; text-align: center; }
     }
-    .home-photo-square {
-      width: 260px;
-      height: 260px;
-      border-radius: 16px;
-      object-fit: cover;
-      border: 6px solid #fff;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.28);
-      background: #222;
-      display: block;
+    @media (max-width: 600px) {
+      .container { padding: 12px; }
+      nav ul { flex-direction: column; }
+      nav ul li { margin: 0 0 8px 0; }
+      .skills-list { flex-direction: row; gap: 10px; }
+      table, th, td { font-size: 0.95em; }
+      .footer { font-size: 0.95em; }
+      .home-header h1 { font-size: 1.3em; }
+      .home-photo-square { width: 140px; height: 140px; }
     }
   </style>
 </head>
 <body>
   <nav>
     <div class="nav-container">
+      <span class="logo"></span>
       <ul>
         <li><a href="#" class="active" data-section="profile">Home</a></li>
         <li><a href="#" data-section="experience">Experience</a></li>
@@ -164,20 +377,42 @@
     </div>
   </nav>
   <div class="container">
-    <!-- Home Section -->
-    <div class="section active-section" id="profile">
-      <h1>Tiriveedhi Sai Venkatesh</h1>
-      <h2>Sr. Analyst in Capgemini | Boomi Integration Developer</h2>
-      <div class="home-photo-container">
-        <img src="https://drive.google.com/uc?export=view&id=1zi6ER1EPlc2cj37huNiGDRLUgYVXU3B5" alt="Profile Photo" class="home-photo-square" />
-      </div>
-      <p>
-        As a skilled Boomi integration specialist, I connect business applications and technologies to ensure secure, scalable, and efficient data flow across all environments. By leveraging the Boomi platform for end-to-end integration, I help organizations streamline processes, automate workflows, and maintain smooth information exchange throughout their digital landscape.
-      </p>
+    <div class="exp-counter-inline" id="exp-counter-inline">
+      <span>Professional Experience:</span>
+      <span id="exp-value-inline">Calculating...</span>
+      <span class="exp-dot" id="exp-dot"></span>
     </div>
-    <!-- Experience Section -->
+
+    <!-- Home Landing Section (unchanged) -->
+    <div class="section active-section" id="profile">
+      <div class="home-header">
+        <h1>Tiriveedhi Sai Venkatesh</h1>
+        <h2>Sr. Analyst in Capgemini | Boomi Integration Developer</h2>
+        <p>
+          As a skilled Boomi integration specialist, I connect business applications and technologies to ensure secure, scalable, and efficient data flow across all environments. By leveraging the Boomi platform for end-to-end integration, I help organizations streamline processes, automate workflows, and maintain smooth information exchange throughout their digital landscape.
+        </p>
+      </div>
+      <div class="skills-photo-grid">
+        <div class="skills-list skills-left">
+          <div>Boomi Integration</div>
+          <div>Boomi API Management</div>
+          <div>Boomi Event Streams</div>
+          <div>NetSuite/Salesforce</div>
+        </div>
+        <div class="home-photo-container">
+          <img src="https://drive.google.com/thumbnail?id=1zi6ER1EPlc2cj37huNiGDRLUgYVXU3B5&sz=w1000" alt="Profile Photo" class="home-photo-square" />
+        </div>
+        <div class="skills-list skills-right">
+          <div>HTML/CSS</div>
+          <div>SQL/PLSQL</div>
+          <div>XML/JSON</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience Section (REVERSE CHRONOLOGICAL ORDER) -->
     <div class="section" id="experience">
-      <h2>Experience</h2>
+      <div class="section-title">Experience</div>
       <table>
         <thead>
           <tr>
@@ -226,9 +461,10 @@
         </tbody>
       </table>
     </div>
+
     <!-- Education Section -->
     <div class="section" id="education">
-      <h2>Education</h2>
+      <div class="section-title">Education</div>
       <table>
         <thead>
           <tr>
@@ -260,9 +496,10 @@
         </tbody>
       </table>
     </div>
+
     <!-- Certifications Section -->
     <div class="section" id="certifications">
-      <h2>Certifications</h2>
+      <div class="section-title">Certifications</div>
       <table>
         <thead>
           <tr>
@@ -290,10 +527,11 @@
         </tbody>
       </table>
     </div>
+
     <!-- Skills Section -->
     <div class="section" id="skills">
-      <h2>Professional Skills</h2>
-      <ul>
+      <div class="section-title">Professional Skills</div>
+      <ul class="skills-list-main">
         <li>Proficient in Boomi Integration development, including process design and deployment.</li>
         <li>Hands-on expertise in Boomi Master Data Hub (MDH) for centralized data management.</li>
         <li>Skilled in implementing Boomi Event Streams for real-time data integration.</li>
@@ -302,32 +540,46 @@
         <li>Proficient in front-end technologies: HTML and CSS.</li>
         <li>Adept at working with data formats such as JSON and XML.</li>
         <li>Solid understanding of relational databases and data modeling.</li>
-        <li>Practical experience integrating with enterprise applications including: NetSuite, Snowflake, Salesforce, Anaplan, OneTrust.</li>
+        <li>Practical experience integrating with enterprise applications including:
+          <ul>
+            <li>NetSuite</li>
+            <li>Snowflake</li>
+            <li>Salesforce</li>
+            <li>Anaplan</li>
+            <li>OneTrust</li>
+          </ul>
+        </li>
         <li>Experience connecting to client applications via HTTP endpoints and APIs.</li>
       </ul>
     </div>
+
     <!-- Achievements Section -->
     <div class="section" id="achievements">
-      <h2>Achievements</h2>
-      <ul>
-        <li>Got good rating in Capgemini (2024)</li>
+      <div class="section-title">Achievements</div>
+      <ul class="achieve-list">
+        <li>Got good rating in  Capgemini (2024)</li>
+        <li></li>
       </ul>
     </div>
+
     <!-- Projects Section -->
     <div class="section" id="projects">
-      <h2>Projects</h2>
-      <div>
-        <b>Enterprise Integration Platform</b>
-        <p>Designed and implemented an enterprise integration platform using Boomi, connecting multiple business systems for seamless data flow.</p>
+      <div class="section-title">Projects</div>
+      <div class="project">
+        <div class="proj-title"><b>Enterprise Integration Platform</b></div>
+        <div class="proj-desc">
+          <p>Designed and implemented an enterprise integration platform using Boomi, connecting multiple business systems for seamless data flow.</p>
+        </div>
       </div>
     </div>
+
     <!-- Contact Section -->
     <div class="section" id="contact">
-      <h2>Contact</h2>
+      <div class="section-title">Contact</div>
       <p>You can reach me at:</p>
       <ul>
-        <li>Email: <a href="mailto:saivenkateshtiriveedhi@gmail.com">saivenkateshtiriveedhi@gmail.com</a></li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/tiriveedhi-sai-venkatesh-31b5a71ab" target="_blank">linkedin.com/in/tiriveedhi-sai-venkatesh-31b5a71ab</a></li>
+        <li>Email: <a href="mailto:saivenkateshtiriveedhi@gmail.com">your.email@example.com</a></li>
+        <li>LinkedIn: <a href="www.linkedin.com/in/tiriveedhi-sai-venkatesh-31b5a71ab" target="_blank">linkedin.com/in/yourprofile</a></li>
         <li>Phone: +91-XXXXXXXXXX</li>
       </ul>
       <form class="contact-form" onsubmit="alert('Thank you for your message!'); return false;">
@@ -344,18 +596,33 @@
       </form>
     </div>
   </div>
+
   <div class="footer">
     <span>
       <b>Contact:</b>
-      <a href="mailto:saivenkateshtiriveedhi@gmail.com">saivenkateshtiriveedhi@gmail.com</a> |
-      <a href="https://www.linkedin.com/in/tiriveedhi-sai-venkatesh-31b5a71ab" target="_blank">LinkedIn</a> |
+      <a href="MailId:">saivenkateshtiriveedhi@gmail.com</a> |
+      <a href="www.linkedin.com/in/tiriveedhi-sai-venkatesh-31b5a71ab" target="_blank">LinkedIn</a> |
       <span>+91-XXXXXXXXXX</span>
     </span>
   </div>
+
   <script>
     // Tab navigation logic for top nav
     const navLinks = document.querySelectorAll('nav ul li a');
     const sections = document.querySelectorAll('.section');
+
+    function showHideExperienceCounter(sectionId) {
+      const expCounter = document.getElementById('exp-counter-inline');
+      if (sectionId === 'profile' || sectionId === 'experience') {
+        expCounter.style.display = 'flex';
+      } else {
+        expCounter.style.display = 'none';
+      }
+    }
+
+    // Initial check (on page load)
+    showHideExperienceCounter('profile');
+
     navLinks.forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
@@ -364,9 +631,11 @@
         sections.forEach(s => s.classList.remove('active-section'));
         const target = link.getAttribute('data-section');
         document.getElementById(target).classList.add('active-section');
+        showHideExperienceCounter(target);
       });
     });
-    // Experience counter logic (if needed)
+
+    // Professional Experience Counter (inline, green dot toggles every 2 seconds)
     function updateExperienceCounterInline() {
       const joinDate = new Date(2022, 11, 1); // Dec 1, 2022
       const now = new Date();
@@ -381,14 +650,14 @@
         if (years > 0) text += ' ';
         text += remMonths + (remMonths === 1 ? ' month' : ' months');
       }
-      const expValue = document.getElementById('exp-value-inline');
-      if (expValue) expValue.textContent = text;
+      document.getElementById('exp-value-inline').textContent = text;
     }
     updateExperienceCounterInline();
     setInterval(updateExperienceCounterInline, 1000 * 60 * 60);
+
+    // Toggle the green dot every 2 seconds
     setInterval(function() {
-      const dot = document.getElementById('exp-dot');
-      if (dot) dot.classList.toggle('off');
+      document.getElementById('exp-dot').classList.toggle('off');
     }, 2000);
   </script>
 </body>
