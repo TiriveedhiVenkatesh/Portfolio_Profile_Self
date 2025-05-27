@@ -382,8 +382,7 @@
       <span id="exp-value-inline">Calculating...</span>
       <span class="exp-dot" id="exp-dot"></span>
     </div>
-
-    <!-- Home Landing Section (unchanged) -->
+    <!-- Home Section -->
     <div class="section active-section" id="profile">
       <div class="home-header">
         <h1>Tiriveedhi Sai Venkatesh</h1>
@@ -400,7 +399,7 @@
           <div>NetSuite/Salesforce</div>
         </div>
         <div class="home-photo-container">
-          <img src="https://drive.google.com/thumbnail?id=1zi6ER1EPlc2cj37huNiGDRLUgYVXU3B5&sz=w1000" alt="Profile Photo" class="home-photo-square" />
+          <img src="https://raw.githubusercontent.com/TiriveedhiVenkatesh/Personal-Files/main/My%20profile.jpg" alt="Profile Photo" class="home-photo-square" />
         </div>
         <div class="skills-list skills-right">
           <div>HTML/CSS</div>
@@ -409,8 +408,7 @@
         </div>
       </div>
     </div>
-
-    <!-- Experience Section (REVERSE CHRONOLOGICAL ORDER) -->
+    <!-- Experience Section -->
     <div class="section" id="experience">
       <div class="section-title">Experience</div>
       <table>
@@ -461,7 +459,6 @@
         </tbody>
       </table>
     </div>
-
     <!-- Education Section -->
     <div class="section" id="education">
       <div class="section-title">Education</div>
@@ -496,7 +493,6 @@
         </tbody>
       </table>
     </div>
-
     <!-- Certifications Section -->
     <div class="section" id="certifications">
       <div class="section-title">Certifications</div>
@@ -527,7 +523,6 @@
         </tbody>
       </table>
     </div>
-
     <!-- Skills Section -->
     <div class="section" id="skills">
       <div class="section-title">Professional Skills</div>
@@ -540,28 +535,17 @@
         <li>Proficient in front-end technologies: HTML and CSS.</li>
         <li>Adept at working with data formats such as JSON and XML.</li>
         <li>Solid understanding of relational databases and data modeling.</li>
-        <li>Practical experience integrating with enterprise applications including:
-          <ul>
-            <li>NetSuite</li>
-            <li>Snowflake</li>
-            <li>Salesforce</li>
-            <li>Anaplan</li>
-            <li>OneTrust</li>
-          </ul>
-        </li>
+        <li>Practical experience integrating with enterprise applications including: NetSuite, Snowflake, Salesforce, Anaplan, OneTrust.</li>
         <li>Experience connecting to client applications via HTTP endpoints and APIs.</li>
       </ul>
     </div>
-
     <!-- Achievements Section -->
     <div class="section" id="achievements">
       <div class="section-title">Achievements</div>
       <ul class="achieve-list">
-        <li>Got good rating in  Capgemini (2024)</li>
-        <li></li>
+        <li>Got good rating in Capgemini (2024)</li>
       </ul>
     </div>
-
     <!-- Projects Section -->
     <div class="section" id="projects">
       <div class="section-title">Projects</div>
@@ -572,14 +556,13 @@
         </div>
       </div>
     </div>
-
     <!-- Contact Section -->
     <div class="section" id="contact">
       <div class="section-title">Contact</div>
       <p>You can reach me at:</p>
       <ul>
-        <li>Email: <a href="mailto:saivenkateshtiriveedhi@gmail.com">your.email@example.com</a></li>
-        <li>LinkedIn: <a href="www.linkedin.com/in/tiriveedhi-sai-venkatesh-31b5a71ab" target="_blank">linkedin.com/in/yourprofile</a></li>
+        <li>Email: <a href="mailto:saivenkateshtiriveedhi@gmail.com">saivenkateshtiriveedhi@gmail.com</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/tiriveedhi-sai-venkatesh-31b5a71ab" target="_blank">linkedin.com/in/tiriveedhi-sai-venkatesh-31b5a71ab</a></li>
         <li>Phone: +91-XXXXXXXXXX</li>
       </ul>
       <form class="contact-form" onsubmit="alert('Thank you for your message!'); return false;">
@@ -596,33 +579,18 @@
       </form>
     </div>
   </div>
-
   <div class="footer">
     <span>
       <b>Contact:</b>
-      <a href="MailId:">saivenkateshtiriveedhi@gmail.com</a> |
-      <a href="www.linkedin.com/in/tiriveedhi-sai-venkatesh-31b5a71ab" target="_blank">LinkedIn</a> |
+      <a href="mailto:saivenkateshtiriveedhi@gmail.com">saivenkateshtiriveedhi@gmail.com</a> |
+      <a href="https://www.linkedin.com/in/tiriveedhi-sai-venkatesh-31b5a71ab" target="_blank">LinkedIn</a> |
       <span>+91-XXXXXXXXXX</span>
     </span>
   </div>
-
   <script>
     // Tab navigation logic for top nav
     const navLinks = document.querySelectorAll('nav ul li a');
     const sections = document.querySelectorAll('.section');
-
-    function showHideExperienceCounter(sectionId) {
-      const expCounter = document.getElementById('exp-counter-inline');
-      if (sectionId === 'profile' || sectionId === 'experience') {
-        expCounter.style.display = 'flex';
-      } else {
-        expCounter.style.display = 'none';
-      }
-    }
-
-    // Initial check (on page load)
-    showHideExperienceCounter('profile');
-
     navLinks.forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
@@ -631,11 +599,9 @@
         sections.forEach(s => s.classList.remove('active-section'));
         const target = link.getAttribute('data-section');
         document.getElementById(target).classList.add('active-section');
-        showHideExperienceCounter(target);
       });
     });
-
-    // Professional Experience Counter (inline, green dot toggles every 2 seconds)
+    // Experience counter logic (if needed)
     function updateExperienceCounterInline() {
       const joinDate = new Date(2022, 11, 1); // Dec 1, 2022
       const now = new Date();
@@ -650,14 +616,14 @@
         if (years > 0) text += ' ';
         text += remMonths + (remMonths === 1 ? ' month' : ' months');
       }
-      document.getElementById('exp-value-inline').textContent = text;
+      const expValue = document.getElementById('exp-value-inline');
+      if (expValue) expValue.textContent = text;
     }
     updateExperienceCounterInline();
     setInterval(updateExperienceCounterInline, 1000 * 60 * 60);
-
-    // Toggle the green dot every 2 seconds
     setInterval(function() {
-      document.getElementById('exp-dot').classList.toggle('off');
+      const dot = document.getElementById('exp-dot');
+      if (dot) dot.classList.toggle('off');
     }, 2000);
   </script>
 </body>
