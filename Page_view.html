@@ -20,16 +20,38 @@
       min-height: 100vh;
     }
 
+    /* Header with marquee */
     header {
       background-color: #2c3e50;
       color: white;
       padding: 1rem 2rem;
-      text-align: center;
-      font-size: 1.5rem;
       font-weight: bold;
       flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+      height: 4.5rem; /* enough height for two lines */
+      overflow: hidden;
     }
 
+    .header-title {
+      font-size: 1.5rem;
+    }
+
+    marquee {
+      font-size: 1rem;
+      color: #f39c12;
+      font-weight: normal;
+      white-space: nowrap;
+    }
+
+    marquee a {
+      color: #f39c12;
+      text-decoration: underline;
+    }
+
+    /* Main content area with iframe */
     main {
       flex-grow: 1;
       display: flex;
@@ -57,6 +79,7 @@
       flex-grow: 1;
     }
 
+    /* Footer styling */
     footer {
       background-color: #2c3e50;
       color: white;
@@ -68,12 +91,18 @@
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
+      header {
+        height: 5rem;
+        padding: 0.75rem 1rem;
+      }
+      .header-title {
+        font-size: 1.25rem;
+      }
+      marquee {
+        font-size: 0.9rem;
+      }
       iframe {
         height: 70vh;
-      }
-      header {
-        font-size: 1.25rem;
-        padding: 0.75rem 1rem;
       }
       footer {
         font-size: 0.8rem;
@@ -81,25 +110,28 @@
     }
 
     @media (max-width: 480px) {
+      header {
+        height: 5.5rem;
+      }
+      .header-title {
+        font-size: 1.1rem;
+      }
+      marquee {
+        font-size: 0.85rem;
+      }
       iframe {
         height: 60vh;
-      }
-      header {
-        font-size: 1.1rem;
-        padding: 0.5rem 1rem;
       }
     }
   </style>
 </head>
 <body>
   <header>
-     <div class="header-title">Tiriveedhi Sai Venkatesh Portfolio</div>
-  <div class="scrolling-message" aria-label="Contact information">
-    &#9993; If any queries, please contact Sai Venkatesh Tiriveedhi: 
-    <a href="mailto:saivenkateshtiriveedhi@gmail.com" style="color: #f39c12; text-decoration: underline;">
-      saivenkateshtiriveedhi@gmail.com
-    </a>
-  </div>
+    <div class="header-title">Tiriveedhi Sai Venkatesh Portfolio profile</div>
+    <marquee direction="right" scrollamount="6" aria-label="Contact information">
+      &#9993; If any queries, please contact Sai Venkatesh Tiriveedhi: 
+      <a href="mailto:saivenkateshtiriveedhi@gmail.com">saivenkateshtiriveedhi@gmail.com</a>
+    </marquee>
   </header>
 
   <main>
