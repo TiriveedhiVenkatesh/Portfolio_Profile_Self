@@ -11,7 +11,7 @@
       min-height: 100vh;
       background: #fff;
       position: relative;
-      padding-bottom: 90px;
+      padding-bottom: 130px;
       overflow-x: hidden;
     }
     body::before {
@@ -261,6 +261,7 @@
       letter-spacing: 1px;
       font-weight: 700;
       text-shadow: 0 0 4px rgba(0,0,0,0.7);
+      white-space: nowrap;
     }
     table {
       width: 100%;
@@ -328,7 +329,7 @@
     .footer {
       position: fixed;
       left: 0;
-      bottom: 0;
+      bottom: 30px;
       width: 100%;
       background: rgba(0,115,177,0.95);
       color: #fff;
@@ -344,6 +345,32 @@
       text-decoration: underline;
       margin: 0 10px;
     }
+    .scrolling-banner {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(90deg, #0073b1, #1561ad, #0073b1);
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 1.05em;
+      font-weight: 600;
+      z-index: 201;
+      letter-spacing: 0.8px;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.4);
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .scrolling-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 20s linear infinite;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
     @media (max-width: 900px) {
       .skills-photo-grid { flex-direction: column; gap: 18px; }
       .skills-list { min-width: 0; align-items: center; text-align: center; }
@@ -353,10 +380,12 @@
       nav ul { flex-direction: column; }
       nav ul li { margin: 0 0 8px 0; }
       .skills-list { flex-direction: row; gap: 10px; }
-      table, th, td { font-size: 0.95em; }
+      table,th, td { font-size: 0.95em; }
       .footer { font-size: 0.95em; }
       .home-header h1 { font-size: 1.3em; }
       .home-photo-square { width: 140px; height: 140px; }
+      .section-title { font-size: 1em; }
+      .scrolling-banner { font-size: 0.95em; }
     }
   </style>
 </head>
@@ -367,7 +396,6 @@
       <ul>
         <li><a href="#" class="active" data-section="profile">Home</a></li>
         <li><a href="#" data-section="experience">Experience</a></li>
-        <li><a href="#" data-section="awards">Awards</a></li>
         <li><a href="#" data-section="education">Education</a></li>
         <li><a href="#" data-section="certifications">Certifications</a></li>
         <li><a href="#" data-section="skills">Skills</a></li>
@@ -410,7 +438,7 @@
       </div>
     </div>
 
-    <!-- Experience Section (REVERSE CHRONOLOGICAL ORDER) -->
+    <!-- Experience Section -->
     <div class="section" id="experience">
       <div class="section-title">Experience</div>
       <table>
@@ -424,33 +452,34 @@
         </thead>
         <tbody>
           <tr>
-<td>Associate Consultant</td>
-<td>Capgemini</td>
-<td>June 2025 - Present</td>
-<td>
-  <ul>
-    <li>Leading Boomi integration projects for enterprise clients with complex business requirements and large-scale data volumes.</li>
-    <li>Designed and implemented scalable integration solutions with robust error handling frameworks and automated retry mechanisms.</li>
-    <li>Developed reusable error handling components and automation for consistent logging, monitoring, and alerting across all processes.</li>
-    <li>Managed process extensions and successfully deployed multiple integration solutions to Production with zero downtime.</li>
-    <li>Provided innovative technical solutions and oversaw end-to-end project delivery from design, development, testing to production.</li>
-  </ul>
-</td>
-</tr>
-<tr>
-  <td>Senior Analyst</td>
-  <td>Capgemini</td>
-  <td>Jun 2024 – June 2025</td>
-  <td>
-    <ul>
-      <li>Developed Boomi integration processes for enterprise clients connecting Salesforce, NetSuite, and cloud applications.</li>
-      <li>Built and maintained REST and SOAP API integrations with OAuth2 authentication and real-time data synchronization.</li>
-      <li>Created Groovy scripts for data transformation, error handling, and custom business logic implementation.</li>
-      <li>Implemented error handling patterns and logging mechanisms for production integration processes.</li>
-      <li>Collaborated with senior developers on project delivery and participated in code reviews and deployment activities.</li>
-    </ul>
-  </td>
-</tr>
+            <td>Associate Consultant</td>
+            <td>Capgemini</td>
+            <td>June 2025 - Present</td>
+            <td>
+              <ul>
+                <li>Leading Boomi integration projects for enterprise clients with complex business requirements and large-scale data volumes.</li>
+                <li>Designed and implemented scalable integration solutions with robust error handling frameworks and automated retry mechanisms.</li>
+                <li>Developed reusable error handling components and automation for consistent logging, monitoring, and alerting across all processes.</li>
+                <li>Managed process extensions and successfully deployed multiple integration solutions to Production with zero downtime.</li>
+                <li>Provided innovative technical solutions and oversaw end-to-end project delivery from design, development, testing to production.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>Senior Analyst</td>
+            <td>Capgemini</td>
+            <td>Jun 2024 – June 2025</td>
+            <td>
+              <ul>
+                <li>Developed Boomi integration processes for enterprise clients connecting Salesforce, NetSuite, and cloud applications.</li>
+                <li>Built and maintained REST and SOAP API integrations with OAuth2 authentication and real-time data synchronization.</li>
+                <li>Created Groovy scripts for data transformation, error handling, and custom business logic implementation.</li>
+                <li>Implemented error handling patterns and logging mechanisms for production integration processes.</li>
+                <li>Collaborated with senior developers on project delivery and participated in code reviews and deployment activities.</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
             <td>Analyst</td>
             <td>Capgemini</td>
             <td>Jun 2023 – May 2024</td>
@@ -458,7 +487,7 @@
               <ul>
                 <li>Synced Accounts & product details between Salesforce and the database.</li>
                 <li>Integrated PLM system with NetSuite.</li>
-                <li>Synchronized transaction details between NetSuite and client’s shipment scanning device.</li>
+                <li>Synchronized transaction details between NetSuite and client's shipment scanning device.</li>
               </ul>
             </td>
           </tr>
@@ -504,7 +533,7 @@
           </tr>
           <tr>
             <td>SSC</td>
-            <td>St. Mary’s English Medium High School</td>
+            <td>St. Mary's English Medium High School</td>
             <td>2016</td>
             <td>Completed SSC Board 90%</td>
           </tr>
@@ -568,20 +597,16 @@
       </ul>
     </div>
 
-    <!-- Achievements Section -->
+    <!-- Achievements Section (with merged award info) -->
     <div class="section" id="achievements">
       <div class="section-title">Achievements</div>
       <ul class="achieve-list">
+        <li><b>Capgemini Emerging Talent Award – H2 2025</b><br/>
+          Recognized for outstanding innovation, problem-solving, and delivery of results in high-impact integration projects, including Salesforce-NetSuite SuiteBilling automations.<br/>
+          Honored for persistence, continuous learning, and driving team success through bold ideas and collaboration.</li>
         <li>Received excellent performance ratings at Capgemini (2024)</li>
       </ul>
     </div>
-	<div class="section" id="achievements">
-  <div class="section-title">Achievements</div>
-  <ul class="achieve-list">
-    <li>Received Capgemini Emerging Talent Award – H2 2025 for outstanding innovation, problem-solving, and delivery of results in high-impact integration projects including Salesforce-NetSuite SuiteBilling automations</li>
-    <li>Honored for persistence, continuous learning, and driving team success through bold ideas and collaboration</li>
-  </ul>
-</div>
 
     <!-- Projects Section -->
     <div class="section" id="projects">
@@ -625,6 +650,13 @@
       <a href="https://www.linkedin.com/in/tiriveedhi-sai-venkatesh-31b5a71ab" target="_blank">LinkedIn</a> |
       <span>+91-XXXXXXXXXX</span>
     </span>
+  </div>
+
+  <!-- Scrolling Banner -->
+  <div class="scrolling-banner">
+    <div class="scrolling-text">
+      I am a Boomi Contractor and Freelancer — I accept both Full-Time and Part-Time projects for enterprise integration, Salesforce, NetSuite, and API development
+    </div>
   </div>
 
   <script>
