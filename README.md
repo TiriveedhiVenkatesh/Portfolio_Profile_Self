@@ -382,7 +382,7 @@
       <ul>
         <li><a href="#" class="active" data-section="profile">Home</a></li>
         <li><a href="#" data-section="experience">Experience</a></li>
-        <li><a href="#" data-section="Awards">Education</a></li>
+        <li><a href="#" data-section="Awards">Awards</a></li>
         <li><a href="#" data-section="education">Education</a></li>
         <li><a href="#" data-section="certifications">Certifications</a></li>
         <li><a href="#" data-section="skills">Skills</a></li>
