@@ -11,7 +11,7 @@
       min-height: 100vh;
       background: #fff;
       position: relative;
-      padding-bottom: 130px;
+      padding-bottom: 70px;
       overflow-x: hidden;
     }
     body::before {
@@ -211,37 +211,9 @@
       border: 1px solid #1561ad;
       padding: 7px 18px;
       border-radius: 18px;
-      margin: 0 0 0 0;
-      box-shadow: 0 2px 8px rgba(21,97,173,0.04);
       display: inline-block;
       font-weight: 600;
       letter-spacing: 0.5px;
-      transition: background 0.2s, color 0.2s;
-    }
-    .skills-list div:hover {
-      background: #1561ad;
-      color: #fff;
-    }
-    .skills-list-main {
-      list-style: disc inside;
-      margin: 0 0 18px 0;
-      padding-left: 16px;
-      color: #eaf6fb;
-      font-size: 1.07em;
-    }
-    .skills-list-main li {
-      margin-bottom: 7px;
-      color: #eaf6fb;
-      letter-spacing: 0.2px;
-    }
-    .skills-list-main li b {
-      color: #1561ad;
-    }
-    .home-photo-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
     }
     .home-photo-square {
       width: 260px;
@@ -288,62 +260,10 @@
     tr:nth-child(even) td {
       background: rgba(21,97,173,0.09);
     }
-    tr:hover td {
-      background: rgba(21,97,173,0.16);
-    }
     .achieve-list {
       color: #eee;
       font-size: 1.07em;
       margin-bottom: 12px;
-    }
-    .contact-form input, .contact-form textarea {
-      width: 100%;
-      max-width: 400px;
-      padding: 8px;
-      margin-top: 4px;
-      border: 1px solid #555;
-      border-radius: 6px;
-      font-size: 1em;
-      background: rgba(255,255,255,0.15);
-      color: #eee;
-    }
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder {
-      color: #ccc;
-    }
-    .contact-form button {
-      background: #0073b1;
-      color: #fff;
-      border: none;
-      padding: 10px 24px;
-      border-radius: 6px;
-      font-size: 1em;
-      cursor: pointer;
-      margin-top: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      transition: background-color 0.3s ease;
-    }
-    .contact-form button:hover {
-      background: #005983;
-    }
-    .footer {
-      position: fixed;
-      left: 0;
-      bottom: 30px;
-      width: 100%;
-      background: rgba(0,115,177,0.95);
-      color: #fff;
-      text-align: center;
-      padding: 12px 0 8px 0;
-      font-size: 1em;
-      z-index: 200;
-      letter-spacing: 0.5px;
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.3);
-    }
-    .footer a {
-      color: #fff;
-      text-decoration: underline;
-      margin: 0 10px;
     }
     .scrolling-banner {
       position: fixed;
@@ -379,9 +299,6 @@
       .container { padding: 12px; }
       nav ul { flex-direction: column; }
       nav ul li { margin: 0 0 8px 0; }
-      .skills-list { flex-direction: row; gap: 10px; }
-      table,th, td { font-size: 0.95em; }
-      .footer { font-size: 0.95em; }
       .home-header h1 { font-size: 1.3em; }
       .home-photo-square { width: 140px; height: 140px; }
       .section-title { font-size: 1em; }
@@ -401,10 +318,10 @@
         <li><a href="#" data-section="skills">Skills</a></li>
         <li><a href="#" data-section="achievements">Achievements</a></li>
         <li><a href="#" data-section="projects">Projects</a></li>
-        <li><a href="#" data-section="contact">Contact</a></li>
       </ul>
     </div>
   </nav>
+
   <div class="container">
     <div class="exp-counter-inline" id="exp-counter-inline">
       <span>Professional Experience:</span>
@@ -412,33 +329,31 @@
       <span class="exp-dot" id="exp-dot"></span>
     </div>
 
-    <!-- Home Landing Section -->
     <div class="section active-section" id="profile">
       <div class="home-header">
         <h1>Tiriveedhi Sai Venkatesh</h1>
         <h2>Associate Consultant in Capgemini | Boomi Integration Developer</h2>
         <p>
-         Certified Boomi Integration Developer with 3.6+ years of experience in designing, developing, and implementing enterprise integration solutions using Boomi AtomSphere. Experienced in NetSuite, Salesforce, Snowflake, Anaplan, HubSpot, OneTrust, HTTP Client, REST APIs, SOAP APIs, EDI X12, Master Data Hub (MDH), and Event Streams. Proficient in SQL,  XML, JSON, and Groovy Scripting. Proven track record of delivering scalable real-time and batch integrations, improving data accuracy, optimizing business workflows, and enhancing operational efficiency..
+          Certified Boomi Integration Developer with 3.6+ years of experience in designing, developing, and implementing enterprise integration solutions using Boomi AtomSphere. Experienced in NetSuite, Salesforce, Snowflake, Anaplan, HubSpot, OneTrust, HTTP Client, REST APIs, SOAP APIs, EDI X12, Master Data Hub (MDH), and Event Streams. Proficient in SQL, XML, JSON, and Groovy Scripting. Proven track record of delivering scalable real-time and batch integrations, improving data accuracy, optimizing business workflows, and enhancing operational efficiency.
         </p>
       </div>
       <div class="skills-photo-grid">
         <div class="skills-list skills-left">
           <div>Boomi Integration Developer</div>
-          <div>NetSuite/Salesforce/Databse</div>
-		   <div>Onetrust/Snowflake/Google APIs</div>
+          <div>NetSuite/Salesforce/Database</div>
+          <div>OneTrust/Snowflake/Google APIs</div>
         </div>
         <div class="home-photo-container">
           <img src="https://raw.githubusercontent.com/TiriveedhiVenkatesh/Portfolio_Profile_Self/main/My%20profile%20photo.jpg" alt="Profile Photo" class="home-photo-square" />
         </div>
         <div class="skills-list skills-right">
-          <div>HTML/CSS/Grovyscript</div>
-          <div>SQL/Rest/Soap</div>
-          <div>XML/JSON/FF/DB</div>
+          <div>HTML/CSS/Groovy Script</div>
+          <div>SQL/REST/SOAP</div>
+          <div>XML/JSON/Flat File/DB</div>
         </div>
       </div>
     </div>
 
-    <!-- Experience Section -->
     <div class="section" id="experience">
       <div class="section-title">Experience</div>
       <table>
@@ -506,7 +421,6 @@
       </table>
     </div>
 
-    <!-- Education Section -->
     <div class="section" id="education">
       <div class="section-title">Education</div>
       <table>
@@ -541,7 +455,6 @@
       </table>
     </div>
 
-    <!-- Certifications Section -->
     <div class="section" id="certifications">
       <div class="section-title">Certifications</div>
       <table>
@@ -572,10 +485,9 @@
       </table>
     </div>
 
-    <!-- Skills Section -->
     <div class="section" id="skills">
       <div class="section-title">Professional Skills</div>
-      <ul class="skills-list-main">
+      <ul class="achieve-list">
         <li>Proficient in Boomi Integration development, including process design and deployment.</li>
         <li>Hands-on expertise in Boomi Master Data Hub (MDH) for centralized data management.</li>
         <li>Skilled in implementing Boomi Event Streams for real-time data integration.</li>
@@ -584,20 +496,11 @@
         <li>Proficient in front-end technologies: HTML and CSS.</li>
         <li>Adept at working with data formats such as JSON and XML.</li>
         <li>Solid understanding of relational databases and data modeling.</li>
-        <li>Practical experience integrating with enterprise applications including:
-          <ul>
-            <li>NetSuite</li>
-            <li>Snowflake</li>
-            <li>Salesforce</li>
-            <li>Anaplan</li>
-            <li>OneTrust</li>
-          </ul>
-        </li>
+        <li>Practical experience integrating with enterprise applications including NetSuite, Snowflake, Salesforce, Anaplan, and OneTrust.</li>
         <li>Experience connecting to client applications via HTTP endpoints and APIs.</li>
       </ul>
     </div>
 
-    <!-- Achievements Section (with merged award info) -->
     <div class="section" id="achievements">
       <div class="section-title">Achievements</div>
       <ul class="achieve-list">
@@ -608,29 +511,13 @@
       </ul>
     </div>
 
-    <!-- Projects Section -->
     <div class="section" id="projects">
       <div class="section-title">Projects</div>
-      <div class="project">
-        <div class="proj-title"><b>Enterprise Integration Platform</b></div>
-        <div class="proj-desc">
-          <p>Designed and implemented an enterprise integration platform using Boomi, connecting multiple business systems for seamless data flow.</p>
-        </div>
-      </div>
+      <p><b>Enterprise Integration Platform</b></p>
+      <p>Designed and implemented an enterprise integration platform using Boomi, connecting multiple business systems for seamless data flow.</p>
     </div>
-
   </div>
 
-  <div class="footer">
-    <span>
-      <b>Contact:</b>
-      <a href="mailto:saivenkateshtiriveedhi@gmail.com">saivenkateshtiriveedhi@gmail.com</a> |
-      <a href="https://www.linkedin.com/in/tiriveedhi-sai-venkatesh-31b5a71ab" target="_blank">LinkedIn</a> |
-      <span>+91-XXXXXXXXXX</span>
-    </span>
-  </div>
-
-  <!-- Scrolling Banner -->
   <div class="scrolling-banner">
     <div class="scrolling-text">
       I am a Boomi Contractor and Freelancer — I accept both Full-Time and Part-Time projects for enterprise integration, Salesforce, NetSuite, and API development
@@ -638,20 +525,14 @@
   </div>
 
   <script>
-    // Tab navigation logic for top nav
     const navLinks = document.querySelectorAll('nav ul li a');
     const sections = document.querySelectorAll('.section');
 
     function showHideExperienceCounter(sectionId) {
       const expCounter = document.getElementById('exp-counter-inline');
-      if (sectionId === 'profile' || sectionId === 'experience') {
-        expCounter.style.display = 'flex';
-      } else {
-        expCounter.style.display = 'none';
-      }
+      expCounter.style.display = (sectionId === 'profile' || sectionId === 'experience') ? 'flex' : 'none';
     }
 
-    // Initial check (on page load)
     showHideExperienceCounter('profile');
 
     navLinks.forEach(link => {
@@ -666,9 +547,8 @@
       });
     });
 
-    // Professional Experience Counter (inline, green dot toggles every 2 seconds)
     function updateExperienceCounterInline() {
-      const joinDate = new Date(2022, 11, 1); // Dec 1, 2022 (month is 0-based)
+      const joinDate = new Date(2022, 11, 1);
       const now = new Date();
       let months = (now.getFullYear() - joinDate.getFullYear()) * 12 + (now.getMonth() - joinDate.getMonth());
       if (now.getDate() < joinDate.getDate()) months--;
@@ -683,10 +563,10 @@
       }
       document.getElementById('exp-value-inline').textContent = text;
     }
+
     updateExperienceCounterInline();
     setInterval(updateExperienceCounterInline, 1000 * 60 * 60);
 
-    // Toggle the green dot every 2 seconds
     setInterval(function() {
       document.getElementById('exp-dot').classList.toggle('off');
     }, 2000);
